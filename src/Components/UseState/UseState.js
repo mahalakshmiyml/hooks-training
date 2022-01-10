@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Button } from 'react-bootstrap'
 
 const UseState = () => {
+    const [display, setDisplay] = useState(true)
+    const [work, Setwork] = useState(true);
+
+    const ToggleFunction = () => {
+        const temp = (!display);
+        console.log(temp);
+        Setwork(temp);
+        setDisplay(!work);
+    }
     return (
         <div>
-            <h1>UseState Hook</h1>
-            <buton></buton>
+            {display && <h1>UseState Hook</h1>}
+            <Button onClick={ToggleFunction} className="btn btn-info text-white">Click me</Button>
         </div>
     )
 }
